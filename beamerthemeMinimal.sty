@@ -1,0 +1,159 @@
+\mode<presentation>
+
+%%% LANGUAGE AND FONTS
+
+% Typesetting packages
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[activate={true,nocompatibility},
+            final,
+            tracking=true,
+            kerning=true,
+            spacing=true,
+            factor=1100,
+            stretch=10,
+            shrink=10]{microtype}
+
+% English language package
+\usepackage[english]{babel}
+
+% Package for stylizing quotes
+\usepackage{csquotes}
+
+% Set font to Palatino with Euler math
+\usepackage{palatino}
+\usepackage{eulervm}
+
+% Font theme
+\usefonttheme{professionalfonts}
+\renewcommand\familydefault{\rmdefault}
+
+
+%%% COLOR THEME
+
+% Color package
+\usepackage{xcolor}
+
+% Color definitions
+\definecolor{darkblue}{HTML}{2F455C}
+\colorlet{lightblue}{darkblue!10!white}
+
+% Text color assignments
+\setbeamercolor{title}{fg = white}
+\setbeamercolor{frametitle}{fg = white}
+\setbeamercolor{normal text}{fg = black}
+
+\setbeamercolor{section in toc}{fg = black}
+\setbeamercolor{section in toc shaded}{fg = black}
+
+\setbeamercolor{item}{fg = black}
+\setbeamercolor{subitem}{fg = black}
+\setbeamercolor{subsubitem}{fg = black}
+
+\setbeamercolor{description item}{fg = black}
+
+\setbeamercolor{caption}{fg = black}
+\setbeamercolor{caption name}{fg = black}
+
+% Background color assignments
+\setbeamercolor{background canvas}{bg = white}
+
+% Block color assignments
+\setbeamercolor{block title}{fg = white, bg = darkblue}
+\setbeamercolor{block body}{bg = lightblue}
+
+\setbeamercolor{qed symbol}{fg = darkblue}
+
+% Bullet color assignments
+\setbeamercolor{itemize item}{fg = darkblue}
+\setbeamercolor{itemize subitem}{fg = darkblue}
+\setbeamercolor{enumerate item}{fg = darkblue}
+\setbeamercolor{enumerate subitems}{fg = darkblue}
+
+
+%%% FLOATS
+
+% Figures
+\usepackage{graphicx}
+\usepackage{tikz}
+
+% Table layouting
+\usepackage{booktabs}
+\usepackage{multirow}
+
+% Caption
+\usepackage[font=small,
+            labelfont=sc,
+            labelsep=endash,
+            margin=\parindent,
+            tableposition=top]{caption}
+
+% Algorithms
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+
+%%% INNER THEME
+
+% Background
+\setbeamertemplate{background}{%
+
+  \begin{tikzpicture}
+
+    \fill[darkblue] (0, 0) rectangle (\the\paperwidth,\the\paperheight);
+
+    \ifnum \thepage > 1 \relax
+
+      \fill[white] (0, 0) rectangle (\the\paperwidth,\the\paperheight);
+
+    \fi
+
+  \end{tikzpicture}
+}
+
+
+%%% OUTER THEME
+
+% Frametitle formatting
+\setbeamertemplate{frametitle}{
+
+    \begin{beamercolorbox}[wd=\paperwidth, ht=1cm]{}
+
+        \begin{tikzpicture}
+
+            \fill[darkblue] (0, 0) rectangle (\paperwidth, 1);
+            \node[anchor=west, white, font=\Large] at (0.01\paperwidth, 0.5) {\insertframetitle};
+            \node[anchor=east, white, font=\Large] at (0.99\paperwidth, 0.5) {\insertframenumber};
+
+        \end{tikzpicture}
+
+    \end{beamercolorbox}
+
+}
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% Title page
+\defbeamertemplate*{title page}{Minimal}[1][]
+{ 
+   \vskip3cm
+    \begin{beamercolorbox}[wd = \paperwidth, leftskip = 0.35\paperwidth, #1]{title}
+
+      \Large\inserttitle
+
+      \begin{tikzpicture}
+        \fill[white] (0, 0) rectangle (0.5\paperwidth, 0.05);
+      \end{tikzpicture}
+
+      \vskip0.3cm
+
+      \large\insertdate\par
+      \large\insertauthor
+
+    \end{beamercolorbox}
+    
+    \vfill
+}
+
+\mode<all>

@@ -1,0 +1,72 @@
+\documentclass{beamer}
+\title{Title of the presentation}
+\date{\today}
+\author{Fabio Matti}
+
+\usetheme{Minimal}
+
+\begin{document}
+
+\begin{frame}[noframenumbering]
+
+    \titlepage
+
+\end{frame}
+
+\begin{frame}{Test page}
+
+    This is just a \emph{test} page.
+
+\end{frame}
+
+\begin{frame}{Gauss-Bonnet Theorem}
+
+    We now state a very remarkable result from differential geometry:
+
+    \begin{block}<1->{Gauss-Bonnet Theorem}
+
+        Suppose $S$ is a regular surface with Euler characteristic $\chi$.
+        It then holds that
+
+        \begin{equation}
+            \int_S K~dA = 2\pi\chi + \sum_i \phi_i
+            \label{equ:gauss-bonnet}
+        \end{equation}
+
+    \end{block}
+
+    This theorem implies the following consequences:
+
+    \begin{itemize}
+        \item<2-> The sphere has a total curvature of $4\pi$.
+        \item<3-> A plane has identical zero curvature.
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Two columns}
+
+    \begin{columns}
+    
+        \begin{column}[]{0.5\textwidth}
+            First column of the \emph{columns} environment, which can be used to
+            get the multiple column look. This is very useful if you want to
+            cram your slide full of text and an image.
+        \end{column}
+        \begin{column}[]{0.5\textwidth}
+            \begin{figure}[h]
+                \centering
+                \begin{tikzpicture}
+                    \fill[lightblue] (0, 0) circle (0.5);
+                    \fill[darkblue] (0.5, 1) circle (1);
+                \end{tikzpicture}
+                \caption{Beautiful modern art.}
+                \label{fig:modern-art}
+            \end{figure}
+        \end{column}
+        
+    \end{columns}
+
+\end{frame}
+
+\end{document}

@@ -1,0 +1,80 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{stylesheetMinimal}
+
+\institution{Institution}
+\project{Project}
+\title{Title of the report}
+\author{Fabio Matti}
+\supervisor{Supervisor}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Test section}
+\label{sec:label}
+
+This is just a \emph{test} section.
+
+\subsection{Gauss-Bonnet Theorem}
+\label{subsec:gauss-bonnet}
+
+We now state a very remarkable result from differential
+geometry \citep{article2021}:
+
+\begin{block}{Gauss-Bonnet Theorem}
+
+    Suppose $S$ is a regular surface with Euler characteristic $\chi$.
+    It then holds that
+
+    \begin{equation}
+        \int_S K~dA = 2\pi\chi + \sum_i \phi_i
+        \label{equ:gauss-bonnet}
+    \end{equation}
+
+\end{block}
+
+\subsubsection{Consequences}
+\label{subsubsec:gauss-bonnet}
+
+This theorem implies the following consequences:
+
+\begin{itemize}
+    \item The sphere has a total curvature of $4\pi$.
+    \item A plane has identical zero curvature.
+\end{itemize}
+
+\subsection{Floats}
+\label{subsec:floats}
+
+Tables and figures look as follows:
+
+\begin{table}[h]
+    \caption{Test}
+    \label{tab:test}
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{@{}lcc@{}}
+        \toprule
+        Name & Age & Height \\
+        \midrule
+        Fabio Matti & 22 & 181 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+        \fill[lightblue] (0, 0) circle (0.5);
+        \fill[darkblue] (0.5, 1) circle (1);
+    \end{tikzpicture}
+    \caption{Beautiful modern art}
+    \label{fig:theme}
+\end{figure}
+
+\bibliography{biblio.bib}
+
+\end{document}

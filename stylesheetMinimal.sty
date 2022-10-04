@@ -1,0 +1,150 @@
+%%% LANGUAGE AND FONTS
+
+% Typesetting packages
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[activate={true,nocompatibility},
+            final,
+            tracking=true,
+            kerning=true,
+            spacing=true,
+            factor=1100,
+            stretch=10,
+            shrink=10]{microtype}
+
+% English language package
+\usepackage[english]{babel}
+
+% Package for stylizing quotes
+\usepackage{csquotes}
+
+% Set font to Palatino with Euler math
+\usepackage{palatino}
+\usepackage{eulervm}
+\renewcommand\familydefault{\rmdefault}
+
+
+%%% COLOR THEME
+
+% Color package
+\usepackage{xcolor}
+
+% Color definitions
+\definecolor{darkblue}{HTML}{2F455C}
+\colorlet{lightblue}{darkblue!10!white}
+
+
+%%% PAGE THEME
+
+% Page layout
+\usepackage[textwidth=400pt,
+            textheight=620pt,
+            headheight=15pt,
+            voffset=40pt]{geometry}
+
+% Section title styles
+\renewcommand\section{\@startsection{section}{1}{\z@}
+                                   {-3.5ex \@plus -1.3ex \@minus -.7ex}
+                                   {2.3ex \@plus.4ex \@minus .4ex}
+                                   {\scshape\Large\bfseries}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}
+                                   {-2.3ex\@plus -1ex \@minus -.5ex}
+                                   {1.2ex \@plus .3ex \@minus .3ex}
+                                   {\scshape\large\bfseries}}
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}
+                                   {-2.3ex\@plus -1ex \@minus -.5ex}
+                                   {1ex \@plus .2ex \@minus .2ex}
+                                   {\scshape\normalsize\bfseries}}
+
+
+%%% REFERENCING
+
+% Bibliography management
+\usepackage[square, numbers]{natbib}
+\bibliographystyle{plainnat}
+
+% Links
+\usepackage{url}
+\urlstyle{same}
+
+% Clickable references
+\usepackage[linktoc=all]{hyperref}
+
+% Enumerations within section (Figure 3.4 instead of maybe Figure 42)
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+\counterwithin{equation}{section}
+\usepackage[list=true, listformat=simple]{subcaption}
+
+
+%%% FLOATS
+
+% Figures
+\usepackage{graphicx}
+\usepackage{tikz}
+
+% Table layouting
+\usepackage{booktabs}
+\usepackage{multirow}
+
+% Caption
+\usepackage[font=small,
+            labelfont=sc,
+            labelsep=endash,
+            margin=\parindent,
+            tableposition=top]{caption}
+
+% Algorithms
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+
+%%% MATHEMATICS
+
+% Mathematics packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Colorboxes
+\usepackage[many]{tcolorbox}
+\newtcolorbox{block}[2][]
+{
+  colframe = darkblue,
+  colback  = lightblue,
+  coltitle = white,
+  title    = {#2},
+  sharp corners,
+  before skip=10pt,
+  after skip=10pt,
+  left=3pt,
+  right=3pt,
+  boxrule=0pt,
+  #1,
+}
+
+%%% TITLEPAGE LAYOUT
+
+% Declare report information commands
+\newcommand*{\project}[1]{\gdef\@project{#1}}
+\newcommand*{\institution}[1]{\gdef\@institution{#1}}
+\newcommand*{\supervisor}[1]{\gdef\@supervisor{#1}}
+
+% Redefinition of the \maketitle command
+\renewcommand*{\maketitle}{
+    \begin{titlepage}
+    \centering
+    {\scshape\LARGE\@institution\unskip\strut\par}
+    \vspace{1cm}
+    {\scshape\Large\@project\unskip\strut\par}
+    \vspace{2cm}
+    {\huge\bfseries\@title\unskip\strut\par}
+    \vspace{2cm}
+    {\Large\itshape\@author\unskip\strut\par}
+    \vfill
+    supervised by\par
+    \@supervisor\unskip\strut\par
+    \vfill
+    {\large \@date\par}
+    \end{titlepage}
+}
+
