@@ -23,8 +23,8 @@ To build a pdf version of the report and the presentation simply run the followi
 
     git clone https://github.com/FMatti/Minimal-DOC.git
     cd Minimal-DOC
-    pdflatex Minimal-REP.tex
-    pdflatex Minimal-PRE.tex
+    pdflatex Minimal-REP.tex; bibtex Minimal-REP.tex; pdflatex Minimal-REP.tex; pdflatex Minimal-REP.tex;
+    pdflatex Minimal-PRE.tex; bibtex Minimal-REP.tex; pdflatex Minimal-REP.tex; pdflatex Minimal-REP.tex;
 
 ## Closing words
 
