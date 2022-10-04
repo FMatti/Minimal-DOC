@@ -1,6 +1,6 @@
 \documentclass[11pt, a4paper]{article}
 
-\usepackage{stylesheetMinimal}
+\usepackage{minimal/stylesheet}
 
 \institution{Institution}
 \project{Project}
@@ -49,10 +49,11 @@ This theorem implies the following consequences:
 \subsection{Floats}
 \label{subsec:floats}
 
-Tables and figures look as follows:
+\hyperref[fig:test]{Figure \ref*{fig:test}} and \hyperref[tab:test]{Table \ref*{tab:test}}
+show samples of the theme.
 
 \begin{table}[h]
-    \caption{Test}
+    \caption{Neatly formatted table}
     \label{tab:test}
     \centering
     \renewcommand{\arraystretch}{1.2}
@@ -72,7 +73,7 @@ Tables and figures look as follows:
         \fill[darkblue] (0.5, 1) circle (1);
     \end{tikzpicture}
     \caption{Beautiful modern art}
-    \label{fig:theme}
+    \label{fig:test}
 \end{figure}
 
 \bibliography{biblio.bib}

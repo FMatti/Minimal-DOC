@@ -5,9 +5,14 @@
 Minimal template for typesetting a report and a presentation in LaTeX.
 
 ## Previews
+
+Sample version of a report:
+
 | Title page | Sample page |
 :-------------------------:|:-------------------------:|
 ![](https://user-images.githubusercontent.com/79205741/193786926-80a56c9e-ed57-46c6-84bc-d148b8841973.png) | ![](https://user-images.githubusercontent.com/79205741/193786941-8e5e2518-1db4-4515-9163-5864c7f418c2.png)
+
+Sample version of a presentation:
 
 | Title slide | Sample slide |
 :-------------------------:|:-------------------------:|
