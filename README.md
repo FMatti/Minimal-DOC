@@ -47,15 +47,13 @@ Minimal-DOC
 ## Becoming a VSCode poweruser...
 1. If not already done, install [VSCode](https://code.visualstudio.com/Download).
 2. If not already done, install a LaTeX distribution (e.g. [MiKTeX](https://miktex.org/download)).
-3. In VSCode go to the `Extensions` tab, search for `LaTeX Workshop`, and install this extension.
+3. In VSCode go to the `Extensions` tab (press `ctrl + shift + x`), search for `LaTeX Workshop`, and install this extension.
 4. Go to `File > Preferences > Configure User Snippets > latex` and insert the contents of [this snippet](https://gist.github.com/FMatti/8050a519f57cba00a1e16accd4eaca96) into the `latex.json` file that you have just opened. You have now access to a variety of code snippets which will be prompted once you type a `\` character in a `.tex` document.
 5. Press `ctrl + shift + p` to open the command palette. Type `Preferences: Open User Settings (JSON)` and press `enter`. In the `settings.json` file then navigate to the variable `"latex-workshop.latex.recipes"` and add a the following recipe below any previously defined recipes:
 ```json
 {
     "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
-    "tools": [
-        "pdflatex", "bibtex", "pdflatex", "pdflatex"
-    ]
+    "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
 },
 ```
 6. In VSCode open a `.tex` file and press `ctrl + shift + p` to open the command palette. Type `LaTeX Workshop: Build with recipe`, select the recipe named `pdflatex ➞ bibtex ➞ pdflatex × 2` and execute it.
