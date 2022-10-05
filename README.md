@@ -20,10 +20,29 @@ The files `Minimal-REP.tex` and `Minimal-PRE.tex` contain, respectively, a sampl
 ## Usage
 To build a pdf version of the report and the presentation simply run the following commands (assuming you have both `pdflatex` and `bibtex` installed for instance from a [MiKTeX](https://miktex.org/download) distribution):
 
-    git clone https://github.com/FMatti/Minimal-DOC.git
-    cd Minimal-DOC
-    pdflatex Minimal-REP.tex; bibtex Minimal-REP.tex; pdflatex Minimal-REP.tex; pdflatex Minimal-REP.tex;
-    pdflatex Minimal-PRE.tex; bibtex Minimal-PRE.tex; pdflatex Minimal-PRE.tex; pdflatex Minimal-PRE.tex;
+```sh
+git clone https://github.com/FMatti/Minimal-DOC.git
+cd Minimal-DOC
+pdflatex Minimal-REP.tex; bibtex Minimal-REP.tex; pdflatex Minimal-REP.tex; pdflatex Minimal-REP.tex;
+pdflatex Minimal-PRE.tex; bibtex Minimal-PRE.tex; pdflatex Minimal-PRE.tex; pdflatex Minimal-PRE.tex;
+```
+
+## Filestructure
+```
+Minimal-DOC
+│  
+│   README.md
+|   LICENSE
+│   Minimal-REP.tex         (sample report)
+│   Minimal-PRE.tex         (sample presentation)
+│   biblio.bib              (bibtex bibliography file)
+|
+└───minimal
+|   |
+|   |   stylesheet.sty      (style file for reports)
+|   |   beamertheme.sty     (style file for presentation)
+```
+
 
 ## Becoming a VSCode poweruser...
 1. If not already done, install [VSCode](https://code.visualstudio.com/Download).
@@ -31,17 +50,19 @@ To build a pdf version of the report and the presentation simply run the followi
 3. In VSCode go to the `Extensions` tab, search for `LaTeX Workshop`, and install this extension.
 4. Go to `File > Preferences > Configure User Snippets > latex` and insert the contents of [this snippet](https://gist.github.com/FMatti/8050a519f57cba00a1e16accd4eaca96) into the `latex.json` file that you have just opened. You have now access to a variety of code snippets which will be prompted once you type a `\` character in a `.tex` document.
 5. Press `ctrl + shift + p` to open the command palette. Type `Preferences: Open User Settings (JSON)` and press `enter`. In the `settings.json` file then navigate to the variable `"latex-workshop.latex.recipes"` and add a the following recipe below any previously defined recipes:
-    {
-        "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
-        "tools": [
-            "pdflatex", "bibtex", "pdflatex", "pdflatex"
-        ]
-    },
-6. Open a `.tex` file and press `ctrl + shift + p` to open the command palette. Type `LaTeX Workshop: Build with recipe`, select the recipe named `pdflatex ➞ bibtex ➞ pdflatex × 2` and execute it.
+```json
+{
+    "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
+    "tools": [
+        "pdflatex", "bibtex", "pdflatex", "pdflatex"
+    ]
+},
+```
+6. In VSCode open a `.tex` file and press `ctrl + shift + p` to open the command palette. Type `LaTeX Workshop: Build with recipe`, select the recipe named `pdflatex ➞ bibtex ➞ pdflatex × 2` and execute it.
 7. To view the generated `.pdf` file, press `ctrl + shift + p` to open the command palette, type `LaTeX Workshop: View LaTeX PDF in VSCode tab` and press `enter`.
 
 After each time you make changes to the `.tex` file, you can partially recompile the file by pressing `ctrl + s` to see the changes applied to the `.pdf` (if you do any changes to the bibliography, you will need to follow the full compilation instructions in point 6.)
 
 ## Closing words
 
-The template is dedicated (in honor and mockery) to the one and only Carl Friedrich Gauss whose work and mentality has never failed to inspire me on my academic journey throughout the last couple of years.
+This theme is dedicated to two truly amazing friends of mine.
