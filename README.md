@@ -1,7 +1,7 @@
 ![](https://img.shields.io/badge/licence-MIT-green?style=flat-square)
 ![](https://img.shields.io/badge/language-LaTeX2e-blue?style=flat-square)
 
-# Minimal-CV
+# Minimal-DOC
 Minimal template for typesetting a report (REP) and a presentation (PRE) in LaTeX.
 
 ## Showcase
